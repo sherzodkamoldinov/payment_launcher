@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.sherzodkamoldinov.payment_launcher">
+
+    <queries>
+        <package android:name="uz.dida.payme" />
+        <package android:name="uz.kapitalbank.android" />
+        <package android:name="air.com.ssdsoftwaresolutions.clickuz" />
+    </queries>
+
+</manifest>
