@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - payment_launcher (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - payment_launcher (from `.symlinks/plugins/payment_launcher/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  payment_launcher:
+    :path: ".symlinks/plugins/payment_launcher/ios"
+
+SPEC CHECKSUMS:
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  payment_launcher: bec6a47b3b2a82bbeca7b3ec5e7aecd5bc562315
+
+PODFILE CHECKSUM: 819463e6a0290f5a72f145ba7cde16e8b6ef0796
+
+COCOAPODS: 1.16.2

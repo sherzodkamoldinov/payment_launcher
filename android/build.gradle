@@ -1,5 +1,3 @@
-package android
-
 group = "com.sherzodkamoldinov.payment_launcher"
 version = "1.0-SNAPSHOT"
 
