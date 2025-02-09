@@ -1,4 +1,4 @@
-package com.alexmiller.map_launcher
+package com.sherzodkamoldinov.payment_launcher
 
 import android.content.Context
 import android.content.Intent
