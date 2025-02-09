@@ -2,7 +2,7 @@
 import 'package:payment_launcher/src/payment_launcher.dart';
 import 'package:payment_launcher/src/utils.dart';
 
-/// Defines the map types supported by this plugin
+/// Defines the payment types supported by this plugin
 enum PaymentType {
   /// Uzum bank
   uzumBank,
@@ -14,7 +14,7 @@ enum PaymentType {
   clickSuperApp,
 }
 
-/// Class that holds all the information needed to launch a map
+/// Class that holds all the information needed to launch a payment
 class AvailablePayment {
   String paymentName;
   PaymentType paymentType;
@@ -33,14 +33,14 @@ class AvailablePayment {
       return AvailablePayment(
         paymentName: json['paymentName'],
         paymentType: paymentType,
-        icon: 'packages/map_launcher/assets/icons/${json['paymentType'] ?? ''}.svg',
+        icon: 'packages/payment_launcher/assets/icons/${json['paymentType'] ?? ''}.svg',
       );
     } else {
       return null;
     }
   }
 
-  /// Launches current map and shows marker at `coords`
+  /// Launches current payment
   Future<void> showPayment({
     required String title,
     String? description,

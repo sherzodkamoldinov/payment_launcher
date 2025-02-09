@@ -8,18 +8,16 @@ import 'package:payment_launcher/src/utils.dart';
 class PaymentLauncher {
   static const MethodChannel _channel = MethodChannel('payment_launcher');
 
-  /// Returns list of installed map apps on the device.
+  /// Returns list of installed payment apps on the device.
   static Future<List<AvailablePayment>> get installedPayments async {
-    debugPrint('start_get');
-    final maps = await _channel.invokeMethod('getInstalledPayments');
-    debugPrint('end_get: ${maps.toString()}');
+    final payments = await _channel.invokeMethod('getInstalledPayments');
+    debugPrint('installedPayments : ${payments.toString()}');
     return List<AvailablePayment>.from(
-      maps.map((map) => AvailablePayment.fromJson(map)),
+      payments.map((payment) => AvailablePayment.fromJson(payment)),
     );
   }
 
-  /// Opens map app specified in [paymentType]
-  /// and shows marker at [coords]
+  /// Opens payment app specified in [paymentType]
   static Future<dynamic> showPayment({
     required PaymentType paymentType,
     required String title,
@@ -30,7 +28,7 @@ class PaymentLauncher {
       'title': title,
       'description': description,
     };
-    return _channel.invokeMethod('showMarker', args);
+    return _channel.invokeMethod('launchPayment', args);
   }
 
   /// Returns boolean indicating if payment app is installed

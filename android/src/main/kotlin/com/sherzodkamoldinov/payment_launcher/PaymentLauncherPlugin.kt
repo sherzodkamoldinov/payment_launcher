@@ -80,7 +80,7 @@ class PaymentLauncherPlugin : FlutterPlugin, MethodCallHandler {
                 result.success(installedPayments.map { map -> map.toPayment() })
             }
 
-            "showMarker" -> {
+            "launchPayment" -> {
                 val args = call.arguments as Map<*, *>
 
                 if (!isPaymentAvailable(args["paymentType"] as String)) {

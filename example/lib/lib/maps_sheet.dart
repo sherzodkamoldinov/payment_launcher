@@ -15,39 +15,40 @@ class MapsSheet {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               final List<AvailablePayment> availableMaps = snapshot.data ?? [];
-              return Column(
-                children: <Widget>[
-                  if (availableMaps.isEmpty)
-                    const Center(child: Text('No payments found'))
-                  else
-                    Expanded(
-                      child: ListView.separated(
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) {
-                          final data = availableMaps[index];
-                          return ListTile(
-                            onTap: () => onMapTap(data),
-                            title: Text(data.paymentName),
-                            leading: SizedBox(
-                              width: 30,
-                              height: 30,
-                              child: SvgPicture.asset(
-                                data.icon,
-                                height: 30.0,
-                                width: 30.0,
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                child: Column(
+                  children: <Widget>[
+                    if (availableMaps.isEmpty)
+                      Expanded(child: const Center(child: Text('No payments found')))
+                    else
+                      Expanded(
+                        child: ListView.separated(
+                          shrinkWrap: true,
+                          itemBuilder: (context, index) {
+                            final data = availableMaps[index];
+                            return ListTile(
+                              onTap: () => onMapTap(data),
+                              title: Text(data.paymentName),
+                              leading: SizedBox(
+                                width: 30,
+                                height: 30,
+                                child: SvgPicture.asset(
+                                  data.icon,
+                                ),
                               ),
-                            ),
-                          );
-                        },
-                        separatorBuilder: (context, index) => const SizedBox(height: 2),
-                        itemCount: availableMaps.length,
+                            );
+                          },
+                          separatorBuilder: (context, index) => const SizedBox(height: 2),
+                          itemCount: availableMaps.length,
+                        ),
                       ),
-                    ),
-                ],
+                  ],
+                ),
               );
             } else if (snapshot.hasError) {
               return SizedBox(
-                height: 300, // Укажите подходящую высоту
+                height: 300,
                 child: Center(child: Text(snapshot.error.toString())),
               );
             } else {

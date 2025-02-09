@@ -69,7 +69,7 @@ public class SwiftPaymentLauncherPlugin: NSObject, FlutterPlugin {
             result(payments.filter({ isPaymentAvailable(payment: $0) }).map({ $0.toPayment() }))
             return;
 
-        case "showMarker":
+        case "launchPayment":
             guard let args = call.arguments as? NSDictionary,
                   let paymentTypeRaw = args["paymentType"] as? String,
                   let paymentType = PaymentType(rawValue: paymentTypeRaw),

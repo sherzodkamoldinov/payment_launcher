@@ -27,4 +27,4 @@ flutter:
         pluginClass: PaymentLauncherPlugin
 
   assets:
-    - images/a_dot_burr.jpeg
+    - assets/icons/
