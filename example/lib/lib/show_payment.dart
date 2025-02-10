@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payment_launcher/payment_launcher.dart';
 
-import 'maps_sheet.dart';
+import 'payment_sheet.dart';
 
 class ShowPayment extends StatefulWidget {
   const ShowPayment({super.key});
